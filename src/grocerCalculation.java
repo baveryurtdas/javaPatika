@@ -11,6 +11,7 @@ public class grocerCalculation {
         banana = 0.95;
         eggplant = 5.00;
 
+        // Getting the type and kilogram amount of fruit from the user
         System.out.print("How many kg of pears ? ");
         pearBuy = input.nextDouble();
         System.out.print("How many kg of apples ? ");
@@ -22,6 +23,7 @@ public class grocerCalculation {
         System.out.print("How many kg of eggplants ? ");
         eggplantBuy = input.nextDouble();
 
+        //Printing the result on the screen
         pay=(pear*pearBuy)+(apple*appleBuy)+(tomato*tomatoBuy)+(banana*bananaBuy)+(eggplant*eggplantBuy);
         System.out.print("Amount payable : " + pay);
 
