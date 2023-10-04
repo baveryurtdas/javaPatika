@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class KDVTutariHesaplama {
     public static void main(String[] args) {
-        double tutar, kdvOran =0.18;
+        double tutar, kdvOran =0.18,kdvTutar,kdvliTutar;
         Scanner input = new Scanner(System.in);
         System.out.println("Ücret tutarını giriniz : ");
         tutar=input.nextDouble();
@@ -12,9 +12,13 @@ public class KDVTutariHesaplama {
             kdvOran=0.08;
         }
 
-        double kdvTutar = tutar * kdvOran;
-        double kdvliTutar = tutar + kdvTutar;
-        System.out.println(kdvliTutar);
+         kdvTutar = tutar * kdvOran;
+         kdvliTutar = tutar + kdvTutar;
+        System.out.println("KDV'siz Tutar : " + tutar);
+        System.out.println("KDV Oranı : " + kdvOran);
+        System.out.println("KDV Tutarı :" + kdvTutar);
+        System.out.println("KDV'li Tutar : " + kdvliTutar);
+
 
 
     }
