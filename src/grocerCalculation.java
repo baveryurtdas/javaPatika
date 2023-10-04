@@ -25,7 +25,7 @@ public class grocerCalculation {
 
         //Printing the result on the screen
         pay=(pear*pearBuy)+(apple*appleBuy)+(tomato*tomatoBuy)+(banana*bananaBuy)+(eggplant*eggplantBuy);
-        System.out.print("Amount payable : " + pay);
+        System.out.printf("Amount payable : " + "%.2f",pay);
 
     }
 }
