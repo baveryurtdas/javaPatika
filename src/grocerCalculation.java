@@ -11,6 +11,8 @@ public class grocerCalculation {
         banana = 0.95;
         eggplant = 5.00;
 
+
+
         // Getting the type and kilogram amount of fruit from the user
         System.out.print("How many kg of pears ? ");
         pearBuy = input.nextDouble();
