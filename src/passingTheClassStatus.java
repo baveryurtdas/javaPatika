@@ -35,7 +35,7 @@ public class passingTheClassStatus {
             music=0;
             invalidLesson++;
         }
-        total = (mat+physic+turkish+chemistry+music) ;
+        total = mat+physic+turkish+chemistry+music ;
         avarage = total / (totalLesson - invalidLesson);
         if(avarage<=55){
             System.out.println("You failed the class.");
