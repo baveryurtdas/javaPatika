@@ -3,6 +3,7 @@ public class calculatorMachine {
     public static void main(String[] args) {
         int n1,n2,select;
 
+        // Receiving data from the user
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the first number : ");
         n1=input.nextInt();
@@ -13,6 +14,7 @@ public class calculatorMachine {
         System.out.print("Your Choice : ");
         select = input.nextInt();
 
+        // Making calculations according to the selection
         switch (select){
             case 1 :
                 System.out.println("Sum : " + (n1+n2));
