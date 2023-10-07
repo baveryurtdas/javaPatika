@@ -3,6 +3,7 @@ public class suggestingAnActivityAccordingToTheAirTemperature {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int heat;
+        //Retrieving data from the user
 
         System.out.print("Enter the temperature : ");
         heat = input.nextInt();

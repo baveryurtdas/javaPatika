@@ -3,6 +3,8 @@ public class doubleAndMultipleOfFour {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int sum = 0;
+        //Retrieving data from the user
+
         System.out.println("Enter a single number to exit.");
         while (true){
             System.out.print("Enter a number : ");

@@ -4,6 +4,8 @@ public class leapYearCalculation {
         int year;
 
         Scanner input = new Scanner(System.in);
+        //Retrieving data from the user
+
         System.out.print("Enter a year : ");
         year = input.nextInt();
         if(year%4==0){

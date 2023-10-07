@@ -5,6 +5,8 @@ public class findingAnEvenNumber {
         Scanner input = new Scanner(System.in);
         int n, sum = 0, count = 0;
         double avarage;
+        //Retrieving data from the user
+
         System.out.print("Enter a number : ");
         n = input.nextInt();
 

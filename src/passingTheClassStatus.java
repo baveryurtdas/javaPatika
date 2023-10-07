@@ -4,6 +4,8 @@ public class passingTheClassStatus {
         double mat,physic,turkish,chemistry,music,avarage,total, invalidLesson = 0 ,totalLesson = 5;
 
         Scanner input = new Scanner(System.in);
+        //Retrieving data from the user
+
         System.out.print("Your math grade : ");
         mat = input.nextDouble();
         if(mat<0 || mat>100){
@@ -35,6 +37,7 @@ public class passingTheClassStatus {
             music=0;
             invalidLesson++;
         }
+        //Avarage calculation
         total = mat+physic+turkish+chemistry+music ;
         avarage = total / (totalLesson - invalidLesson);
         if(avarage<=55){
