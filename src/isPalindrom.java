@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class isPalindrom {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Lütfen bir sayı girin : ");
+        System.out.print("Please enter a number  : ");
         int a = scan.nextInt();
         System.out.println(isPalindroom(a));
     }
@@ -15,7 +15,8 @@ public class isPalindrom {
             reverseNumber = (reverseNumber * 10) + lastNumber;
             temp /= 10;
         }
-        return number == reverseNumber;
+        return number == reverseNumber; // if it is true, the code that prints false if it is not true on the screen
+
 
 
     }
