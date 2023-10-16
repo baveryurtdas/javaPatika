@@ -10,14 +10,9 @@ public class TheLetterBWithStars {
                     letter[i][j] = " * ";
                 } else {
                     letter[i][j] = "   ";
-
                 }
-
-
             }
         }
-
-
         for (String[] row : letter) {
             for (String col : row) {
                 System.out.print(col);
