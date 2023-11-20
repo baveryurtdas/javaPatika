@@ -1,6 +1,6 @@
 package generic;
 
-public class Nullable <T>{
+public class Nullable <T extends B>{
     private final T value;
 
     public Nullable(T value) {
