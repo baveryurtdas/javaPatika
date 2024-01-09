@@ -1,15 +1,22 @@
 package collections;
 
+
+import java.util.HashSet;
+import java.util.Iterator;
+
 public class Main {
     public static void main(String[] args) {
-        int[] a = new int[5];
-        a[0] = 1;
-        a[1] = 1;
-        a[2] = 1;
-        a[3] = 1;
-        a[6] = 1;
+        HashSet<Integer> hSet = new HashSet<>();
+        hSet.add(10);
+        hSet.add(20);
+        hSet.add(30);
+        hSet.add(null);
 
-        int[] b  = new int[10];
+
+        Iterator<Integer> itr = hSet.iterator();
+        while (itr.hasNext()){
+            System.out.println(itr.next());
+        }
 
     }
 }
