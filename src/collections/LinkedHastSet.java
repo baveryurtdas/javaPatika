@@ -10,6 +10,7 @@ public class LinkedHastSet {
         lSet.add(10);
         lSet.add(10);
         lSet.add(30);
+        lSet.addFirst(50);
 
         Iterator<Integer> itr = lSet.iterator();
 

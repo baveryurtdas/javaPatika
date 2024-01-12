@@ -1,22 +1,24 @@
 package collections;
 
 
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        HashSet<Integer> hSet = new HashSet<>();
-        hSet.add(10);
-        hSet.add(20);
-        hSet.add(30);
-        hSet.add(null);
+        List<String> liste = new ArrayList<>();
 
+        liste.add("Ankara");
+        liste.add("Diyarbakır");
+        liste.add("istanbul");
+        liste.add("Siirt");
+        liste.add("Bolu");
+        liste.clear();
 
-        Iterator<Integer> itr = hSet.iterator();
-        while (itr.hasNext()){
-            System.out.println(itr.next());
-        }
+        Object[] objectArr = liste.toArray();
+        String[] str = liste.toArray(new String[0]);
+        System.out.println(str[0]);
 
     }
 }
