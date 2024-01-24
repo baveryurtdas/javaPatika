@@ -5,7 +5,7 @@ import java.util.TreeMap;
 
 public class LinkedHasMapandTreeMap {
     public static void main(String[] args) {
-        TreeMap<Integer,Student> students = new TreeMap<>(new OrderByNoComparator().reversed());
+        TreeMap<Integer,Student> students = new TreeMap<>(new OrderByNoComparator());
 
         students.put(102,new Student(102,"Baver",100));
         students.put(110,new Student(110,"Damla",25));
