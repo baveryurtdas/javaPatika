@@ -1,0 +1,57 @@
+package matchfixture;
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        LinkedList<String> teams = new LinkedList<>();
+
+        System.out.println("Number of Teams : ");
+        int n = Integer.parseInt(sc.nextLine());
+        int matchPerRound = n / 2;
+
+        for (int i = 0; i < n; ++i) {
+            System.out.print("Teams Name : ");
+            teams.add(sc.nextLine());
+        }
+
+        if (n % 2 != 0) {
+            ++n;
+            teams.add(null);
+        }
+
+        Collections.shuffle(teams);
+
+        int matchNum = (n * (n - 1));
+        int roundNum = matchNum / (n / 2);
+
+        String[] host = new String[matchNum / 2];
+        String[] away = new String[matchNum / 2];
+
+        for (int i = 0, a = 0; i < n - 1; i++) {
+            for (int j = 0; j < n / 2; j++) {
+                if (teams.get(j) != null && teams.get(n - 1 - j) != null) {
+                    host[a] = teams.get(j);
+                    away[a] = teams.get(n - 1 - j);
+                    a++;
+                }
+            }
+            Collections.rotate(teams.subList(1, n), 1);
+        }
+        int e = 0;
+        for (int i = 0, a = 0; i < roundNum / 2; ) {
+            System.out.println("\n" + (++i) + ". Round");
+            for (int j = 0; j < matchPerRound; j++, a++) {
+                System.out.println(host[a] + " vs " + away[a]);
+            }
+            e = i;
+        }
+        for (int i = 0, a = 0; i < roundNum / 2; i++) {
+            System.out.println("\n" + (++e) + ".Round");
+            for (int j = 0; j < matchPerRound; j++, a++) {
+                System.out.println(host[a] + " vs " + away[a]);
+            }
+        }
+    }
+}
