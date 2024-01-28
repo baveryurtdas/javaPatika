@@ -1,6 +1,6 @@
 package PatikaStore;
 
-public class Notebook extends Product{
+public class Notebook extends Product {
     int ram;
     String storage;
     String screenSize;

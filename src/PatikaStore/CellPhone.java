@@ -7,6 +7,7 @@ public class CellPhone extends Product{
     int ram;
     String color;
 
+
     public CellPhone(int id, double unitPrice, double discountRate, int stockQuantity, String name, Brand brand, String memory, String screenSize, int batteryPower, int ram, String color) {
         super(id, unitPrice, discountRate, stockQuantity, name, brand);
         this.memory = memory;

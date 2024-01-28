@@ -15,6 +15,7 @@ public class Product {
         this.stockQuantity = stockQuantity;
         this.name = name;
         this.brand = brand;
+
     }
 
     public int getId() {
@@ -57,11 +58,4 @@ public class Product {
         this.name = name;
     }
 
-    public Brand getBrand() {
-        return brand;
-    }
-
-    public void setBrand(Brand brand) {
-        this.brand = brand;
-    }
 }
