@@ -36,6 +36,7 @@ public class Main {
                 System.out.println("Ürün Listesi");
                 System.out.println("-- Ürünler --");
                 initializeCellPhone();
+                initializeNotebook();
                 listProducts();
                 break;
             case 3:
@@ -84,7 +85,7 @@ public class Main {
                 10, 25, "IPhone 11 64 GB",
                 brands.get(2), "64 GB", "6.1 Inc",
                 3046, 6, "Mavi"));
-        cellPhones.add(new CellPhone(2, 4012,
+        cellPhones.add(new CellPhone(3, 4012,
                 10, 25, "Redmi Note 10 Pro 8 GB",
                 brands.get(7), "64 GB", "6.5 Inc",
                 4000, 12, "Beyaz"));
@@ -95,11 +96,11 @@ public class Main {
         initializeBrands();
 
         notebooks.add(new Notebook(1, 7000, 10, 25,
-                "HUAWEI Matebook 14", brands.get(3), 16, "HUAWEI", "14.0 Inc"));
+                "HUAWEI Matebook 14", brands.get(3), 16, "HUAWEI", "14.0 Inc", 512));
         notebooks.add(new Notebook(2, 3699, 10, 25,
-                "LENOVO V14 IGL", brands.get(1), 16, "HUAWEI", "14.0 Inc"));
+                "LENOVO V14 IGL", brands.get(1), 8, "LENOVO", "14.0 Inc", 1024));
         notebooks.add(new Notebook(3, 8199, 10, 25,
-                "HUAWEI Matebook 14", brands.get(5), 16, "HUAWEI", "14.0 Inc"));
+                "Asus TUF Gaming", brands.get(5), 32, "ASUS", "15.6 Inc", 2048));
     }
 
 
@@ -118,6 +119,19 @@ public class Main {
                     phone.getMemory(), phone.getScreenSize(), phone.getBatteryPower(), phone.getRam(), phone.getColor());
         }
         System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+        System.out.println("Notebook Listesi");
+        System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.format("| %-5s | %-50s | %-10s | %-15s | %-20s | %-15s | %-5s |%n",
+                "ID", "Ürün Adı", "Fiyat", "Marka", "Depolama", "Ekran", "RAM");
+        System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        for (Notebook notebook : notebooks) {
+            System.out.format("| %-5d | %-50s | %-10.2f | %-15s | %-20s | %-15s | %-5s |%n",
+                    notebook.id, notebook.getName(), notebook.getUnitPrice(), notebook.brand.getName(),
+                    notebook.getMemory(), notebook.getScreenSize(), notebook.getRam());
+        }
+        System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
 
     }
 
