@@ -4,9 +4,9 @@ public class Notebook extends Product {
     int ram;
     String storage;
     String screenSize;
-    int memory;
+    String memory;
 
-    public Notebook(int id, double unitPrice, double discountRate, int stockQuantity, String name, Brand brand, int ram, String storage, String screenSize, int memory) {
+    public Notebook(int id, double unitPrice, double discountRate, int stockQuantity, String name, Brand brand, int ram, String screenSize, String memory) {
         super(id, unitPrice, discountRate, stockQuantity, name, brand);
         this.ram = ram;
         this.storage = storage;
@@ -38,11 +38,11 @@ public class Notebook extends Product {
         this.screenSize = screenSize;
     }
 
-    public int getMemory() {
+    public String getMemory() {
         return memory;
     }
 
-    public void setMemory(int memory) {
+    public void setMemory(String memory) {
         this.memory = memory;
     }
 }
