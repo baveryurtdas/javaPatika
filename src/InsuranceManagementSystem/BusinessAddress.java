@@ -1,4 +1,7 @@
-public class BusinessAddress implements Address{
+package InsuranceManagementSystem;
+
+
+public class BusinessAddress implements Address {
     private String street;
     private String city;
     private String zipCode;

@@ -1,3 +1,5 @@
+package InsuranceManagementSystem;
+
 public class AddressManager {
     public static void addAddress(User user, Address address) {
         if (user != null && address != null) {
