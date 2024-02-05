@@ -1,16 +1,25 @@
 package InsuranceManagementSystem;
 
 public class EnterpriseAccount extends Account {
-    private String businessName;
 
-    public EnterpriseAccount(int accountId, User user, String businessName) {
+
+    public EnterpriseAccount(int accountId, User user) {
         super(accountId, user);
-        this.businessName = businessName;
+
+    }
+
+    @Override
+    public void addInsurance(Insurance insurance) {
+        //Kurumsal müşteriye özgü sigorta ekleme işlemi.
+        System.out.println("Enterprise Insurance Added.");
     }
 
     @Override
     public void calculateBalance() {
 
     }
+
+
+
 
 }
