@@ -6,6 +6,7 @@ public class AccountManager {
     private TreeSet<Account> accountSet;
 
     public AccountManager() {
+        super();
         this.accountSet = new TreeSet<>();
     }
 

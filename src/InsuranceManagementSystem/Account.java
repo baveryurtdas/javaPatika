@@ -1,7 +1,7 @@
 package InsuranceManagementSystem;
 
 
-import javax.sound.midi.Soundbank;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -21,7 +21,7 @@ public abstract class Account implements Comparable<Account> {
         this.user = user;
     }
 
-    public Account(Account accountId, User user) {
+    public Account() {
         this.authenticationStatus = AuthenticationStatus.FAIL;
         this.user = null;
         this.insurancesList = new ArrayList<>();
@@ -51,7 +51,7 @@ public abstract class Account implements Comparable<Account> {
     public void login(String email, String password) throws InvalidAuthenticationException {
         //Burada email ve şifre kontrolü yapılır
         // Eğer doğruysa authenticationStatus SUCCESS, aksi halde FAIL döner.
-        if (user != null && email.equals(user.getEmail()) && password.equals(user.getPassword())) {
+        if (user != null && email.equalsIgnoreCase(user.getEmail()) && password.equals(user.getPassword())) {
             authenticationStatus = AuthenticationStatus.SUCCESS;
         } else {
             throw new InvalidAuthenticationException("Invalid email or password");
