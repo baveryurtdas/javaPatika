@@ -1,7 +1,5 @@
 package InsuranceManagementSystem;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
@@ -12,6 +10,36 @@ public class Main {
         //Account Manager sınıfı oluşturma
         AccountManager accountManager = new AccountManager();
         //Kullanıcı kaydı oluşturma.
+        System.out.println("Welcome Insurance Management System");
+        System.out.println("Create a new account");
+        Account newAccount = createAccount(scan);
+        if (newAccount != null) {
+            accountManager.addAccount(newAccount);
+
+            System.out.print("Login - Email : ");
+            String loginEmail = scan.nextLine();
+
+            System.out.print("Login - Password : ");
+            String loginPassword = scan.nextLine();
+
+            Account loggedInAccount = login(accountManager, loginEmail, loginPassword);
+            if (loggedInAccount != null) {
+                System.out.println("Login Successful.");
+                loggedInAccount.showUserInfo();
+            } else {
+                System.out.println("Login failed.");
+            }
+
+        } else {
+            System.out.println("Account creation failed.");
+        }
+
+
+    }
+
+
+    public static Account createAccount(Scanner scan) {
+
         System.out.print("Name : ");
         String name = scan.nextLine();
 
@@ -31,27 +59,28 @@ public class Main {
         int age = scan.nextInt();
         scan.nextLine();
 
+        char accountType;
+
+        do {
+            System.out.print("Create an Individual(I) or Enterprise (E) account : ");
+            accountType = scan.nextLine().toUpperCase().charAt(0);
+        } while (accountType != 'I' && accountType != 'E');
+
         User user = new User(name, surname, email, password, profession, age, null, null);
-        Account individualAccount = new IndividualAccount(productAccountIdCounter, user);
-        accountManager.addAccount(individualAccount);
 
-        //Klavyeden alınan email ve şifre bilgisi ile giriş işlemi
+        switch (accountType) {
+            case 'I':
+                return new IndividualAccount(productAccountIdCounter, user);
 
-        System.out.print("Login - Email : ");
-        String loginEmail = scan.nextLine();
+            case 'E':
+                return new EnterpriseAccount(productAccountIdCounter++, user);
 
-        System.out.print("Login - Password : ");
-        String loginPassword = scan.nextLine();
+            default:
+                System.out.println("Invalid Option");
+                break;
 
-        Account loggedInAccount = login(accountManager, loginEmail, loginPassword);
-        if (loggedInAccount != null) {
-            System.out.println("Login successful.");
-            individualAccount.showUserInfo();
-        } else {
-            System.out.println("Login failed");
         }
-
-
+        return null;
     }
 
     public static Account login(AccountManager accountManager, String email, String password) {
