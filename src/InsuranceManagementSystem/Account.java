@@ -93,13 +93,14 @@ public abstract class Account implements Comparable<Account> {
         System.out.println("Age : " + user.getAge());
         System.out.println("Account Type : " + getClass().getSimpleName());
 
-//        System.out.println("Addresses : ");
-//        for (Address address : user.getAddressList()) {
-//            System.out.println("Street : " + address.getStreet());
-//            System.out.println("City : " + address.getCity());
-//            System.out.println("Zip Code : " + address.getZipCode());
-//            System.out.println("-------------");
-//        }
+        System.out.println("Addresses : ");
+        for (Address address : user.getAddressList()) {
+            System.out.println("Address Type : " + address.getClass().getSimpleName());
+            System.out.println("Street : " + address.getStreet());
+            System.out.println("City : " + address.getCity());
+            System.out.println("Zip Code : " + address.getZipCode());
+            System.out.println("-------------");
+        }
 
 
     }

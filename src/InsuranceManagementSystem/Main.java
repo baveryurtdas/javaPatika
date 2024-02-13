@@ -1,5 +1,7 @@
 package InsuranceManagementSystem;
 
+import javax.sound.midi.Soundbank;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -7,6 +9,9 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+
+
+
         //Account Manager sınıfı oluşturma
         AccountManager accountManager = new AccountManager();
         //Kullanıcı kaydı oluşturma.
@@ -40,6 +45,8 @@ public class Main {
 
     public static Account createAccount(Scanner scan) {
 
+
+
         System.out.print("Name : ");
         String name = scan.nextLine();
 
@@ -59,6 +66,37 @@ public class Main {
         int age = scan.nextInt();
         scan.nextLine();
 
+        User user = new User(name, surname, email, password, profession, age, new ArrayList<>(), null);
+
+        //Ev adresini ekleme
+
+        System.out.print("Home Adress - Street : ");
+        String homeStreet = scan.nextLine();
+
+        System.out.print("Home Adress - City : ");
+        String homeCity = scan.nextLine();
+
+        System.out.print("Home Address - ZipCode : ");
+        String homeZipCode = scan.nextLine();
+
+        Address homeAdress = new HomeAddress(homeStreet,homeCity,homeZipCode);
+        AddressManager.addAddress(user,homeAdress);
+
+        //İş Adresi Ekleme
+
+        System.out.print("Busines Address - Street : ");
+        String businessStreet = scan.nextLine();
+
+        System.out.print("Busines Address - City : ");
+        String businessCity = scan.nextLine();
+
+        System.out.print("Busines Address - ZipCode : ");
+        String businessZipCode  = scan.nextLine();
+
+        Address businessAdress = new BusinessAddress(businessStreet,businessCity,businessZipCode);
+        AddressManager.addAddress(user,businessAdress);
+
+
         char accountType;
 
         do {
@@ -66,7 +104,7 @@ public class Main {
             accountType = scan.nextLine().toUpperCase().charAt(0);
         } while (accountType != 'I' && accountType != 'E');
 
-        User user = new User(name, surname, email, password, profession, age, null, null);
+
 
         switch (accountType) {
             case 'I':
