@@ -11,7 +11,6 @@ public class Main {
         Scanner scan = new Scanner(System.in);
 
 
-
         //Account Manager sınıfı oluşturma
         AccountManager accountManager = new AccountManager();
         //Kullanıcı kaydı oluşturma.
@@ -46,7 +45,6 @@ public class Main {
     public static Account createAccount(Scanner scan) {
 
 
-
         System.out.print("Name : ");
         String name = scan.nextLine();
 
@@ -79,8 +77,8 @@ public class Main {
         System.out.print("Home Address - ZipCode : ");
         String homeZipCode = scan.nextLine();
 
-        Address homeAdress = new HomeAddress(homeStreet,homeCity,homeZipCode);
-        AddressManager.addAddress(user,homeAdress);
+        Address homeAdress = new HomeAddress(homeStreet, homeCity, homeZipCode);
+        AddressManager.addAddress(user, homeAdress);
 
         //İş Adresi Ekleme
 
@@ -91,10 +89,10 @@ public class Main {
         String businessCity = scan.nextLine();
 
         System.out.print("Busines Address - ZipCode : ");
-        String businessZipCode  = scan.nextLine();
+        String businessZipCode = scan.nextLine();
 
-        Address businessAdress = new BusinessAddress(businessStreet,businessCity,businessZipCode);
-        AddressManager.addAddress(user,businessAdress);
+        Address businessAdress = new BusinessAddress(businessStreet, businessCity, businessZipCode);
+        AddressManager.addAddress(user, businessAdress);
 
 
         char accountType;
@@ -103,7 +101,6 @@ public class Main {
             System.out.print("Create an Individual(I) or Enterprise (E) account : ");
             accountType = scan.nextLine().toUpperCase().charAt(0);
         } while (accountType != 'I' && accountType != 'E');
-
 
 
         switch (accountType) {
@@ -125,6 +122,7 @@ public class Main {
         //Account manager sınıfında ki login metodunu çağırma
         return accountManager.login(email, password);
     }
+
 
 
 }

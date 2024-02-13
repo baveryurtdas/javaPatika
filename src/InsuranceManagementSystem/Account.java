@@ -81,6 +81,7 @@ public abstract class Account implements Comparable<Account> {
     }
 
     public abstract void addInsurance(Insurance insurance);
+    public abstract void removeInsurance(Insurance insurance);
 
 
     public abstract void calculateBalance();
