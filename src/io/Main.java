@@ -1,22 +1,20 @@
 package io;
 
+
 import java.io.*;
 import java.nio.charset.Charset;
 
-
 public class Main {
     public static void main(String[] args) {
-
+        String data = "BAWERYURTDAŞ";
         try {
-            FileInputStream fileInput = new FileInputStream("patika.txt");
-            InputStreamReader inpReader = new InputStreamReader(fileInput);
+            PrintWriter writer = new PrintWriter("output.txt");
+            writer.print(1213123);
+            writer.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
-            int i = inpReader.read();
-            while (i != -1){
-                System.out.print((char) i);
-                i = inpReader.read();
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());        }
+
     }
 }
